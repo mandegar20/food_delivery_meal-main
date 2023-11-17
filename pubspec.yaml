@@ -85,16 +85,16 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Metropolis
+    - family: Vazirmatn
       fonts:
-        - asset: assets/font/Metropolis-Regular.otf
-        - asset: assets/font/Metropolis-Medium.otf
+        - asset: assets/font/Vazirmatn-Regular.ttf
+        - asset: assets/font/Vazirmatn-Medium.ttf
           weight: 500
-        - asset: assets/font/Metropolis-SemiBold.otf
+        - asset: assets/font/Vazirmatn-SemiBold.ttf
           weight: 600
-        - asset: assets/font/Metropolis-Bold.otf
+        - asset: assets/font/Vazirmatn-Bold.ttf
           weight: 700
-        - asset: assets/font/Metropolis-ExtraBold.otf
+        - asset: assets/font/Vazirmatn-ExtraBold.ttf
           weight: 800
   #
   # For details regarding fonts from package dependencies,
