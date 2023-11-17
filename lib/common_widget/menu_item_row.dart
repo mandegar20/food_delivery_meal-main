@@ -38,7 +38,7 @@ class MenuItemRow extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
                         mObj["name"],
@@ -52,19 +52,13 @@ class MenuItemRow extends StatelessWidget {
                         height: 4,
                       ),
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Image.asset(
-                            "assets/img/rate.png",
-                            width: 10,
-                            height: 10,
-                            fit: BoxFit.cover,
-                          ),
                           const SizedBox(
                             width: 4,
                           ),
                           Text(
-                            mObj["rate"],
+                            mObj["price"],
                             textAlign: TextAlign.center,
                             style:
                                 TextStyle(color: TColor.primary, fontSize: 11),
@@ -84,7 +78,7 @@ class MenuItemRow extends StatelessWidget {
                                 TextStyle(color: TColor.primary, fontSize: 11),
                           ),
                           Text(
-                            mObj["food_type"],
+                            mObj["artist"],
                             textAlign: TextAlign.center,
                             style: TextStyle(color: TColor.white, fontSize: 12),
                           ),

@@ -4,6 +4,12 @@ import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
 import '../more/my_order_view.dart';
 import 'menu_items_view.dart';
+import './abrang/menu_abrang_view.dart';
+import './artist/menu_artist_view.dart';
+import './painting/menu_painting_view.dart';
+import './pen/menu_pen_view.dart';
+import './pencil/menu_pencil_view.dart';
+import './new/menu_new_view.dart';
 
 class MenuView extends StatefulWidget {
   const MenuView({super.key});
@@ -15,27 +21,105 @@ class MenuView extends StatefulWidget {
 class _MenuViewState extends State<MenuView> {
   List menuArr = [
     {
-      "name": "Food",
-      "image": "assets/img/menu_1.png",
+      "name": "پنسل",
+      "image": "assets/img/menu1.jpg",
       "items_count": "120",
     },
     {
-      "name": "Beverages",
-      "image": "assets/img/menu_2.png",
+      "name": "خودکار",
+      "image": "assets/img/menu2.jpg",
       "items_count": "220",
     },
     {
-      "name": "Desserts",
-      "image": "assets/img/menu_3.png",
+      "name": "آبرنگ",
+      "image": "assets/img/menu3.jpg",
       "items_count": "155",
     },
     {
-      "name": "Promotions",
-      "image": "assets/img/menu_4.png",
+      "name": "رنگی",
+      "image": "assets/img/menu4.jpg",
+      "items_count": "25",
+    },
+    {
+      "name": "جدیدترین ها",
+      "image": "assets/img/new.jpg",
+      "items_count": "155",
+    },
+    {
+      "name": "هنرمندان",
+      "image": "assets/img/personicon.jpg",
       "items_count": "25",
     },
   ];
   TextEditingController txtSearch = TextEditingController();
+
+  void navigateToMenu(int index, var mObj) {
+    switch (index) {
+      case 0:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuPencilView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      case 1:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuPenView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      case 2:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuAbrangView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      case 3:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuPaintingView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      case 4:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuNewView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      case 5:
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MenuArtistView(
+              mObj: mObj,
+            ),
+          ),
+        );
+        break;
+      // Add more cases as needed for other index values
+      default:
+      // Handle the default case or do nothing
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -68,13 +152,6 @@ class _MenuViewState extends State<MenuView> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Text(
-                          "Menu",
-                          style: TextStyle(
-                              color: TColor.primaryText,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w800),
-                        ),
                         IconButton(
                           onPressed: () {
                             Navigator.push(
@@ -88,6 +165,13 @@ class _MenuViewState extends State<MenuView> {
                             height: 25,
                           ),
                         ),
+                        Text(
+                          "مینو",
+                          style: TextStyle(
+                              color: TColor.primaryText,
+                              fontSize: 20,
+                              fontWeight: FontWeight.w800),
+                        ),
                       ],
                     ),
                   ),
@@ -97,7 +181,7 @@ class _MenuViewState extends State<MenuView> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: RoundTextfield(
-                      hintText: "Search Food",
+                      hintText: "جستجو",
                       controller: txtSearch,
                       left: Container(
                         alignment: Alignment.center,
@@ -123,14 +207,16 @@ class _MenuViewState extends State<MenuView> {
                         var mObj = menuArr[index] as Map? ?? {};
                         return GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => MenuItemsView(
-                                  mObj: mObj,
-                                ),
-                              ),
-                            );
+                            navigateToMenu(index, mObj);
+
+                            // Navigator.push(
+                            //   context,
+                            //   MaterialPageRoute(
+                            //     builder: (context) => MenuItemsView(
+                            //       mObj: mObj,
+                            //     ),
+                            //   ),
+                            // );
                           },
                           child: Stack(
                             alignment: Alignment.centerRight,
@@ -155,42 +241,9 @@ class _MenuViewState extends State<MenuView> {
                                     ]),
                               ),
                               Row(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.end,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Image.asset(
-                                    mObj["image"].toString(),
-                                    width: 80,
-                                    height: 80,
-                                    fit: BoxFit.contain,
-                                  ),
-                                  const SizedBox(
-                                    width: 15,
-                                  ),
-                                  Expanded(
-                                    child: Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          mObj["name"].toString(),
-                                          style: TextStyle(
-                                              color: TColor.primaryText,
-                                              fontSize: 22,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                        const SizedBox(
-                                          height: 4,
-                                        ),
-                                        Text(
-                                          "${mObj["items_count"].toString()} items",
-                                          style: TextStyle(
-                                              color: TColor.secondaryText,
-                                              fontSize: 11),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
                                   Container(
                                     width: 35,
                                     height: 35,
@@ -211,6 +264,42 @@ class _MenuViewState extends State<MenuView> {
                                       height: 15,
                                     ),
                                   ),
+                                  const SizedBox(
+                                    width: 15,
+                                  ),
+                                  Expanded(
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.end,
+                                      children: [
+                                        Text(
+                                          mObj["name"].toString(),
+                                          style: TextStyle(
+                                              color: TColor.primaryText,
+                                              fontSize: 22,
+                                              fontWeight: FontWeight.w700),
+                                        ),
+                                        const SizedBox(
+                                          height: 4,
+                                        ),
+                                        Text(
+                                          "${mObj["items_count"].toString()} items",
+                                          style: TextStyle(
+                                              color: TColor.secondaryText,
+                                              fontSize: 11),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  ClipRRect(
+                                    borderRadius: BorderRadius.circular(50),
+                                    child: Image.asset(
+                                      mObj["image"].toString(),
+                                      width: 40,
+                                      height: 40,
+                                      fit: BoxFit.contain,
+                                    ),
+                                  )
                                 ],
                               ),
                             ],
