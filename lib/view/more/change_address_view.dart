@@ -15,7 +15,7 @@ class ChangeAddressView extends StatefulWidget {
 }
 
 class _ChangeAddressViewState extends State<ChangeAddressView> {
-  GoogleMapController? _controller;
+  GoogleMapController? controller;
 
   final locations = const [
     LatLng(37.42796133580664, -122.085749655962),
@@ -86,13 +86,12 @@ class _ChangeAddressViewState extends State<ChangeAddressView> {
             mapType: MapType.normal,
             initialCameraPosition: _kLake,
             compassEnabled: false,
-            gestureRecognizers: Set()
-              ..add(Factory<PanGestureRecognizer>(
-                () => PanGestureRecognizer(),
-              )),
+            gestureRecognizers: {
+              Factory<PanGestureRecognizer>(() => PanGestureRecognizer()),
+            }.toSet(),
             markers: markers,
             onMapCreated: (GoogleMapController controller) {
-              _controller = controller;
+              controller = controller;
             },
           );
         },

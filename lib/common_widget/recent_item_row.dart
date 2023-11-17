@@ -14,28 +14,12 @@ class RecentItemRow extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
-
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                rObj["image"].toString(),
-                width: 70,
-                height: 70,
-                fit: BoxFit.cover,
-              ),
-            ),
-            const SizedBox(
-              width: 8,
-            ),
-
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  
-                  
                   Text(
                     rObj["name"],
                     textAlign: TextAlign.center,
@@ -48,12 +32,13 @@ class RecentItemRow extends StatelessWidget {
                     height: 8,
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
                         rObj["type"],
                         textAlign: TextAlign.center,
-                        style: TextStyle(color: TColor.secondaryText, fontSize: 11),
+                        style: TextStyle(
+                            color: TColor.secondaryText, fontSize: 11),
                       ),
                       Text(
                         " . ",
@@ -61,50 +46,29 @@ class RecentItemRow extends StatelessWidget {
                         style: TextStyle(color: TColor.primary, fontSize: 11),
                       ),
                       Text(
-                        rObj["food_type"],
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: TColor.secondaryText, fontSize: 12),
-                      ),
-                      
-                    ],
-                  ),
-                    const SizedBox(
-                    height: 4,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      
-                     
-                      Image.asset(
-                        "assets/img/rate.png",
-                        width: 10,
-                        height: 10,
-                        fit: BoxFit.cover,
-                      ),
-
-                      const SizedBox(
-                        width: 4,
-                      ),
-                      Text(
-                        rObj["rate"],
-                        textAlign: TextAlign.center,
-                        style: TextStyle(color: TColor.primary, fontSize: 11),
-                      ),
-
-                       const SizedBox(
-                        width: 8,
-                      ),
-
-                      Text(
-                        "(${ rObj["rating"] } Ratings)",
+                        rObj["artist"],
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: TColor.secondaryText, fontSize: 11),
+                            color: TColor.secondaryText, fontSize: 12),
                       ),
                     ],
                   ),
+                  const SizedBox(
+                    height: 4,
+                  ),
                 ],
+              ),
+            ),
+            const SizedBox(
+              width: 8,
+            ),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                rObj["image"].toString(),
+                width: 70,
+                height: 70,
+                fit: BoxFit.cover,
               ),
             ),
           ],

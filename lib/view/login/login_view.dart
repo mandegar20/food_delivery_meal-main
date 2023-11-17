@@ -161,7 +161,6 @@ class _LoginViewState extends State<LoginView> {
     );
   }
 
-  //TODO: Action
   void btnLogin() {
     if (!txtEmail.text.isEmail) {
       mdShowAlert(Globs.appName, MSG.enterEmail, () {});
@@ -181,8 +180,6 @@ class _LoginViewState extends State<LoginView> {
       "push_token": "1234"
     });
   }
-
-  //TODO: ServiceCall
 
   // void serviceCallLogin(Map<String, dynamic> parameter) {
   //   Globs.showHUD();

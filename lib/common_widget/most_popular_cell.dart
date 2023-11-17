@@ -14,7 +14,7 @@ class MostPopularCell extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ClipRRect(
               borderRadius: BorderRadius.circular(10),
@@ -40,45 +40,25 @@ class MostPopularCell extends StatelessWidget {
               height: 4,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
                   mObj["type"],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                      color: TColor.secondaryText,
-                      fontSize: 12),
+                  style: TextStyle(color: TColor.secondaryText, fontSize: 12),
                 ),
-
                 Text(
-                " . ",
+                  " . ",
                   textAlign: TextAlign.center,
                   style: TextStyle(color: TColor.primary, fontSize: 12),
                 ),
-
-                Text(
-                  mObj["food_type"],
-                  textAlign: TextAlign.center,
-                  style: TextStyle(color: TColor.secondaryText, fontSize: 12),
-                ),
-
                 const SizedBox(
                   width: 8,
                 ),
-            
-                Image.asset(
-                "assets/img/rate.png",
-                width: 10,
-                height: 10,
-                fit: BoxFit.cover,
-              ) ,
-              const SizedBox(
-                  width: 4,
-                ),
                 Text(
-                  mObj["rate"],
+                  mObj["artist"],
                   textAlign: TextAlign.center,
-                  style: TextStyle(color: TColor.primary, fontSize: 12),
+                  style: TextStyle(color: TColor.secondaryText, fontSize: 12),
                 ),
               ],
             ),

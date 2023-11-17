@@ -22,82 +22,170 @@ class _HomeViewState extends State<HomeView> {
   TextEditingController txtSearch = TextEditingController();
 
   List catArr = [
-    {"image": "assets/img/cat_offer.png", "name": "Offers"},
-    {"image": "assets/img/cat_sri.png", "name": "Sri Lankan"},
-    {"image": "assets/img/cat_3.png", "name": "Italian"},
-    {"image": "assets/img/cat_4.png", "name": "Indian"},
+    {"image": "assets/img/pencildrawing.jpg", "name": "پنسل"},
+    {"image": "assets/img/pendrawing.jpg", "name": " قلم رنگی"},
+    {"image": "assets/img/abramg.jpg", "name": "آبرنگ"},
+    {"image": "assets/img/landscape.jpg", "name": "رنگی"},
   ];
 
   List popArr = [
     {
-      "image": "assets/img/res_1.png",
-      "name": "Minute by tuk tuk",
+      "image": "assets/img/painting.jpg",
+      "name": "راه بی پایان",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
     {
-      "image": "assets/img/res_2.png",
-      "name": "Café de Noir",
+      "image": "assets/img/painting2.jpg",
+      "name": "مسیر غروب",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
     {
-      "image": "assets/img/res_3.png",
-      "name": "Bakes by Tella",
+      "image": "assets/img/painting3.jpg",
+      "name": "مسافر",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
+    {
+      "image": "assets/img/painting7.jpg",
+      "name": "غروب",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting8.jpg",
+      "name": "راه بی پایان",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    }
   ];
 
   List mostPopArr = [
     {
-      "image": "assets/img/m_res_1.png",
-      "name": "Minute by tuk tuk",
+      "image": "assets/img/painting4.jpg",
+      "name": "مسیر غروب",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
     {
-      "image": "assets/img/m_res_2.png",
-      "name": "Café de Noir",
+      "image": "assets/img/painting5.jpg",
+      "name": "عشق بی فرجام",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting4.jpg",
+      "name": "مسیر غروب",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting5.jpg",
+      "name": "عشق بی فرجام",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting6.jpg.jpg",
+      "name": "میان راه",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting7.jpg",
+      "name": "غروب",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting8.jpg",
+      "name": "راه بی پایان",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting6.jpg.jpg",
+      "name": "میان راه",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
   ];
 
   List recentArr = [
     {
-      "image": "assets/img/item_1.png",
-      "name": "Mulberry Pizza by Josh",
+      "image": "assets/img/painting3.jpg",
+      "name": "میان راه",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
     {
-      "image": "assets/img/item_2.png",
-      "name": "Barita",
+      "image": "assets/img/painting7.jpg",
+      "name": "غروب",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
     {
-      "image": "assets/img/item_3.png",
-      "name": "Pizza Rush Hour",
+      "image": "assets/img/painting8.jpg",
+      "name": "راه بی پایان",
       "rate": "4.9",
       "rating": "124",
-      "type": "Cafa",
-      "food_type": "Western Food"
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting.jpg",
+      "name": "میان راه",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting7.jpg",
+      "name": "غروب",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
+    },
+    {
+      "image": "assets/img/painting8.jpg",
+      "name": "راه بی پایان",
+      "rate": "4.9",
+      "rating": "124",
+      "type": "کاک",
+      "artist": "عبدلواحد علیار"
     },
   ];
 
@@ -112,18 +200,12 @@ class _HomeViewState extends State<HomeView> {
               const SizedBox(
                 height: 46,
               ),
+
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      "Good morning ${ServiceCall.userPayload[KKey.name] ?? ""}!",
-                      style: TextStyle(
-                          color: TColor.primaryText,
-                          fontSize: 20,
-                          fontWeight: FontWeight.w800),
-                    ),
                     IconButton(
                       onPressed: () {
                         Navigator.push(
@@ -137,67 +219,74 @@ class _HomeViewState extends State<HomeView> {
                         height: 25,
                       ),
                     ),
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
                     Text(
-                      "Delivering to",
-                      style:
-                          TextStyle(color: TColor.secondaryText, fontSize: 11),
+                      " گالری جلوه های رنگین",
+                      style: TextStyle(
+                          color: TColor.primaryText,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w800),
                     ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Current Location",
-                          style: TextStyle(
-                              color: TColor.secondaryText,
-                              fontSize: 16,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        const SizedBox(
-                          width: 25,
-                        ),
-                        Image.asset(
-                          "assets/img/dropdown.png",
-                          width: 12,
-                          height: 12,
-                        )
-                      ],
-                    )
                   ],
                 ),
               ),
               const SizedBox(
                 height: 20,
               ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: RoundTextfield(
-                  hintText: "Search Food",
-                  controller: txtSearch,
-                  left: Container(
-                    alignment: Alignment.center,
-                    width: 30,
-                    child: Image.asset(
-                      "assets/img/search.png",
-                      width: 20,
-                      height: 20,
-                    ),
-                  ),
-                ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20),
+              //   child: Column(
+              //     crossAxisAlignment: CrossAxisAlignment.start,
+              //     children: [
+              //       Text(
+              //         "Delivering to",
+              //         style:
+              //             TextStyle(color: TColor.secondaryText, fontSize: 11),
+              //       ),
+              //       const SizedBox(
+              //         height: 6,
+              //       ),
+              //       Row(
+              //         mainAxisAlignment: MainAxisAlignment.start,
+              //         children: [
+              //           Text(
+              //             "Current Location",
+              //             style: TextStyle(
+              //                 color: TColor.secondaryText,
+              //                 fontSize: 16,
+              //                 fontWeight: FontWeight.w700),
+              //           ),
+              //           const SizedBox(
+              //             width: 25,
+              //           ),
+              //           Image.asset(
+              //             "assets/img/dropdown.png",
+              //             width: 12,
+              //             height: 12,
+              //           )
+              //         ],
+              //       )
+              //     ],
+              //   ),
+              // ),
+              const SizedBox(
+                height: 40,
               ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 20),
+              //   child: RoundTextfield(
+              //     hintText: "Search Food",
+              //     controller: txtSearch,
+              //     left: Container(
+              //       alignment: Alignment.center,
+              //       width: 30,
+              //       child: Image.asset(
+              //         "assets/img/search.png",
+              //         width: 20,
+              //         height: 20,
+              //       ),
+              //     ),
+              //   ),
+              // ),
               const SizedBox(
                 height: 30,
               ),
@@ -219,7 +308,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Popular Restaurants",
+                  title: "جدیدترین ها",
                   onView: () {},
                 ),
               ),
@@ -239,7 +328,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Most Popular",
+                  title: "محبوب ترین ها",
                   onView: () {},
                 ),
               ),
@@ -261,7 +350,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "Recent Items",
+                  title: "تازگی اضافه شده",
                   onView: () {},
                 ),
               ),

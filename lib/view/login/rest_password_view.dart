@@ -71,7 +71,6 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
     );
   }
 
-  //TODO: Action
   void btnSubmit() {
     if (!txtEmail.text.isEmail) {
       mdShowAlert(Globs.appName, MSG.enterEmail, () {});
@@ -82,8 +81,6 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
 
     serviceCallForgotRequest({"email": txtEmail.text});
   }
-
-  //TODO: ServiceCall
 
   void serviceCallForgotRequest(Map<String, dynamic> parameter) {
     Globs.showHUD();

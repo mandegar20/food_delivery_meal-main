@@ -107,7 +107,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                               color: TColor.primary,
                                             ),
                                             onRatingUpdate: (rating) {
-                                              print(rating);
+                                              (rating);
                                             },
                                           ),
                                         ),
