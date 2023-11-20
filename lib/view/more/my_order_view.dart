@@ -13,11 +13,8 @@ class MyOrderView extends StatefulWidget {
 
 class _MyOrderViewState extends State<MyOrderView> {
   List itemArr = [
-    {"name": "Beef Burger", "qty": "1", "price": 16.0},
-    {"name": "Classic Burger", "qty": "1", "price": 14.0},
-    {"name": "Cheese Chicken Burger", "qty": "1", "price": 17.0},
-    {"name": "Chicken Legs Basket", "qty": "1", "price": 15.0},
-    {"name": "French Fires Large", "qty": "1", "price": 6.0}
+    {"name": "افسوس", "price": 3900},
+    {"name": "دریا", "price": 5000},
   ];
 
   @override
@@ -49,7 +46,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                     ),
                     Expanded(
                       child: Text(
-                        "My Order",
+                        "فرمایشات",
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 20,
@@ -59,126 +56,8 @@ class _MyOrderViewState extends State<MyOrderView> {
                   ],
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
-                child: Row(
-                  children: [
-                    ClipRRect(
-                        borderRadius: BorderRadius.circular(15),
-                        child: Image.asset(
-                          "assets/img/shop_logo.png",
-                          width: 80,
-                          height: 80,
-                          fit: BoxFit.cover,
-                        )),
-                    const SizedBox(
-                      width: 8,
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            "King Burgers",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: TColor.primaryText,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w700),
-                          ),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "assets/img/rate.png",
-                                width: 10,
-                                height: 10,
-                                fit: BoxFit.cover,
-                              ),
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Text(
-                                "4.9",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.primary, fontSize: 12),
-                              ),
-                              const SizedBox(
-                                width: 8,
-                              ),
-                              Text(
-                                "(124 Ratings)",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.secondaryText, fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Burger",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.secondaryText, fontSize: 12),
-                              ),
-                              Text(
-                                " . ",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.primary, fontSize: 12),
-                              ),
-                              Text(
-                                "Western Food",
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    color: TColor.secondaryText, fontSize: 12),
-                              ),
-                            ],
-                          ),
-                          const SizedBox(
-                            height: 4,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset(
-                                "assets/img/location-pin.png",
-                                width: 13,
-                                height: 13,
-                                fit: BoxFit.contain,
-                              ),
-                              const SizedBox(
-                                width: 4,
-                              ),
-                              Expanded(
-                                child: Text(
-                                  "No 03, 4th Lane, Newyork",
-                                  textAlign: TextAlign.left,
-                                  style: TextStyle(
-                                      color: TColor.secondaryText,
-                                      fontSize: 12),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
               const SizedBox(
-                height: 20,
+                height: 100,
               ),
               Container(
                 decoration: BoxDecoration(color: TColor.textfield),
@@ -203,7 +82,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                         children: [
                           Expanded(
                             child: Text(
-                              "${cObj["name"].toString()} x${cObj["qty"].toString()}",
+                              "${cObj["name"]}",
                               style: TextStyle(
                                   color: TColor.primaryText,
                                   fontSize: 13,
@@ -214,7 +93,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                             width: 15,
                           ),
                           Text(
-                            "\$${cObj["price"].toString()}",
+                            "AFN ${cObj["price"].toString()}",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 13,
@@ -231,30 +110,6 @@ class _MyOrderViewState extends State<MyOrderView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Delivery Instructions",
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                              color: TColor.primaryText,
-                              fontSize: 13,
-                              fontWeight: FontWeight.w700),
-                        ),
-                        TextButton.icon(
-                          onPressed: () {},
-                          icon: Icon(Icons.add, color: TColor.primary),
-                          label: Text(
-                            "Add Notes",
-                            style: TextStyle(
-                                color: TColor.primary,
-                                fontSize: 13,
-                                fontWeight: FontWeight.w500),
-                          ),
-                        )
-                      ],
-                    ),
                     Divider(
                       color: TColor.secondaryText.withOpacity(0.5),
                       height: 1,
@@ -266,7 +121,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Sub Total",
+                          "مجموع هزینه",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -274,7 +129,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "\$68",
+                          "AFN 8900",
                           style: TextStyle(
                               color: TColor.primary,
                               fontSize: 13,
@@ -289,7 +144,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Delivery Cost",
+                          "هزینه انتقال",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -297,7 +152,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "\$2",
+                          "AFN 50",
                           style: TextStyle(
                               color: TColor.primary,
                               fontSize: 13,
@@ -319,7 +174,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total",
+                          "مجموع",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -327,7 +182,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "\$70",
+                          "AFN 8950",
                           style: TextStyle(
                               color: TColor.primary,
                               fontSize: 22,
@@ -339,7 +194,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 25,
                     ),
                     RoundButton(
-                        title: "Checkout",
+                        title: "پرداخت هزینه",
                         onPressed: () {
                           Navigator.push(
                             context,

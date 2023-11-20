@@ -131,7 +131,6 @@ class _MenuItemsViewState extends State<MenuNewView> {
       "artist": "عبدلواحد علیار"
     },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -218,6 +217,7 @@ class _MenuItemsViewState extends State<MenuNewView> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => const ItemDetailsView()),
+                        //this should discussed deeply
                       );
                     },
                   );

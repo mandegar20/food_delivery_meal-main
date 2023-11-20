@@ -19,37 +19,25 @@ class _MoreViewState extends State<MoreView> {
   List moreArr = [
     {
       "index": "1",
-      "name": "Payment Details",
+      "name": "جزئیات پرداخت",
       "image": "assets/img/more_payment.png",
       "base": 0
     },
     {
       "index": "2",
-      "name": "My Orders",
+      "name": "فرمایشات",
       "image": "assets/img/more_my_order.png",
       "base": 0
     },
     {
-      "index": "3",
-      "name": "Notifications",
-      "image": "assets/img/more_notification.png",
-      "base": 15
-    },
-    {
-      "index": "4",
-      "name": "Inbox",
-      "image": "assets/img/more_inbox.png",
-      "base": 0
-    },
-    {
       "index": "5",
-      "name": "About Us",
+      "name": "درباره ما",
       "image": "assets/img/more_info.png",
       "base": 0
     },
     {
       "index": "6",
-      "name": "Logout",
+      "name": "خروج از حساب کاربری",
       "image": "assets/img/more_info.png",
       "base": 0
     },
@@ -73,7 +61,7 @@ class _MoreViewState extends State<MoreView> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "More",
+                      "بیشتر",
                       style: TextStyle(
                           color: TColor.primaryText,
                           fontSize: 20,
@@ -120,17 +108,7 @@ class _MoreViewState extends State<MoreView> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => const MyOrderView()));
-                          case "3":
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        const NotificationsView()));
-                          case "4":
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const InboxView()));
+
                           case "5":
                             Navigator.push(
                                 context,

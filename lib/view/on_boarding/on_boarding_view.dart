@@ -16,21 +16,19 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
   List pageArr = [
     {
-      "title": "Find Food You Love",
-      "subtitle":
-          "Discover the best foods from over 1,000\nrestaurants and fast delivery to your\ndoorstep",
-      "image": "assets/img/on_boarding_1.png",
+      "title": "متنوع ترین نقاشی",
+      "subtitle": "بیشتر از صد نقاشی در طرح های مختلف",
+      "image": "assets/img/onBoarding.jpg",
     },
     {
-      "title": "Fast Delivery",
-      "subtitle": "Fast food delivery to your home, office\n wherever you are",
-      "image": "assets/img/on_boarding_2.png",
+      "title": "فرمایش نقاشی",
+      "subtitle": "با فرستادن عکس تان نقاشی دلخواه تان را دریافت کنید",
+      "image": "assets/img/onBoarding2.jpg",
     },
     {
-      "title": "Live Tracking",
-      "subtitle":
-          "Real time tracking of your food on the app\nonce you placed the order",
-      "image": "assets/img/on_boarding_3.png",
+      "title": "هنرمندان ماهر",
+      "subtitle": "با ماهرترین هنرمندان در ارتباط باشید",
+      "image": "assets/img/onBoarding1.jpg",
     },
   ];
 
@@ -129,7 +127,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: RoundButton(
-                    title: "Next",
+                    title: "بعدی",
                     onPressed: () {
                       if (selectPage >= 2) {
                         // Home Screen

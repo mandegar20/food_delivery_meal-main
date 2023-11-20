@@ -41,13 +41,6 @@ class _ProfileViewState extends State<ProfileView> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  "Profile",
-                  style: TextStyle(
-                      color: TColor.primaryText,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w800),
-                ),
                 IconButton(
                   onPressed: () {
                     Navigator.push(
@@ -60,6 +53,13 @@ class _ProfileViewState extends State<ProfileView> {
                     width: 25,
                     height: 25,
                   ),
+                ),
+                Text(
+                  "پروفایل",
+                  style: TextStyle(
+                      color: TColor.primaryText,
+                      fontSize: 20,
+                      fontWeight: FontWeight.w800),
                 ),
               ],
             ),
@@ -98,12 +98,12 @@ class _ProfileViewState extends State<ProfileView> {
               size: 12,
             ),
             label: Text(
-              "Edit Profile",
+              "ویرایش پروفایل",
               style: TextStyle(color: TColor.primary, fontSize: 12),
             ),
           ),
           Text(
-            "Hi there Emilia!",
+            "محمد بهمنی",
             style: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 16,
@@ -112,7 +112,7 @@ class _ProfileViewState extends State<ProfileView> {
           TextButton(
             onPressed: () {},
             child: Text(
-              "Sign Out",
+              "خروج از حساب کاربری",
               style: TextStyle(
                   color: TColor.secondaryText,
                   fontSize: 11,
@@ -122,68 +122,68 @@ class _ProfileViewState extends State<ProfileView> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Name",
-              hintText: "Enter Name",
-              controller: txtName,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Email",
-              hintText: "Enter Email",
-              keyboardType: TextInputType.emailAddress,
-              controller: txtEmail,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Mobile No",
-              hintText: "Enter Mobile No",
-              controller: txtMobile,
-              keyboardType: TextInputType.phone,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Address",
-              hintText: "Enter Address",
-              controller: txtAddress,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Password",
-              hintText: "* * * * * *",
-              obscureText: true,
-              controller: txtPassword,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
-            child: RoundTitleTextfield(
-              title: "Confirm Password",
-              hintText: "* * * * * *",
-              obscureText: true,
-              controller: txtConfirmPassword,
-            ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: RoundButton(title: "Save", onPressed: () {}),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Name",
+          //     hintText: "Enter Name",
+          //     controller: txtName,
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Email",
+          //     hintText: "Enter Email",
+          //     keyboardType: TextInputType.emailAddress,
+          //     controller: txtEmail,
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Mobile No",
+          //     hintText: "Enter Mobile No",
+          //     controller: txtMobile,
+          //     keyboardType: TextInputType.phone,
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Address",
+          //     hintText: "Enter Address",
+          //     controller: txtAddress,
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Password",
+          //     hintText: "* * * * * *",
+          //     obscureText: true,
+          //     controller: txtPassword,
+          //   ),
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+          //   child: RoundTitleTextfield(
+          //     title: "Confirm Password",
+          //     hintText: "* * * * * *",
+          //     obscureText: true,
+          //     controller: txtConfirmPassword,
+          //   ),
+          // ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 20),
+          //   child: RoundButton(title: "Save", onPressed: () {}),
+          // ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
         ]),
       ),
     ));

@@ -29,9 +29,9 @@ class _WelcomeViewState extends State<WelcomeView> {
                   width: media.width,
                 ),
                 Image.asset(
-                  "assets/img/app_logo.png",
-                  width: media.width * 0.55,
-                  height: media.width * 0.55,
+                  "assets/img/logo.jpg",
+                  width: media.width * 0.35,
+                  height: media.width * 0.35,
                   fit: BoxFit.contain,
                 ),
               ],
@@ -40,7 +40,7 @@ class _WelcomeViewState extends State<WelcomeView> {
               height: media.width * 0.1,
             ),
             Text(
-              "Discover the best foods from over 1,000\nrestaurants and fast delivery to your\ndoorstep",
+              "متنوع نقاشی ها را بخرید، سفارش دهید\n و تحویل بگیرید!",
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: TColor.secondaryText,
@@ -53,7 +53,7 @@ class _WelcomeViewState extends State<WelcomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: RoundButton(
-                title: "Login",
+                title: "ورود",
                 onPressed: () {
                   Navigator.push(
                     context,
@@ -70,7 +70,7 @@ class _WelcomeViewState extends State<WelcomeView> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: RoundButton(
-                title: "Create an Account",
+                title: "ساختن حساب کاربری",
                 type: RoundButtonType.textPrimary,
                 onPressed: () {
                   Navigator.push(

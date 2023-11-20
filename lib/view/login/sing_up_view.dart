@@ -39,14 +39,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 64,
               ),
               Text(
-                "Sign Up",
+                "ایجاد جساب",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 30,
                     fontWeight: FontWeight.w800),
               ),
               Text(
-                "Add your details to sign up",
+                "مشخصات خود را برای ایجاد حساب اضافه کنید",
                 style: TextStyle(
                     color: TColor.secondaryText,
                     fontSize: 14,
@@ -56,14 +56,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Name",
+                hintText: "اسم",
                 controller: txtName,
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Email",
+                hintText: "ایمیل",
                 controller: txtEmail,
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -71,7 +71,7 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Mobile No",
+                hintText: "شماره تماس",
                 controller: txtMobile,
                 keyboardType: TextInputType.phone,
               ),
@@ -79,14 +79,14 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Address",
+                hintText: "آدرس",
                 controller: txtAddress,
               ),
               const SizedBox(
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Password",
+                hintText: "رمز",
                 controller: txtPassword,
                 obscureText: true,
               ),
@@ -94,7 +94,7 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Confirm Password",
+                hintText: "تایید رمز",
                 controller: txtConfirmPassword,
                 obscureText: true,
               ),
@@ -102,15 +102,9 @@ class _SignUpViewState extends State<SignUpView> {
                 height: 25,
               ),
               RoundButton(
-                  title: "Sign Up",
+                  title: "ایجاد حساب",
                   onPressed: () {
                     btnSignUp();
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OnBoardingView(),
-                      ),
-                    );
                   }),
               const SizedBox(
                 height: 30,
@@ -128,14 +122,14 @@ class _SignUpViewState extends State<SignUpView> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Already have an Account? ",
+                      "قبلا حساب دارید؟ ",
                       style: TextStyle(
                           color: TColor.secondaryText,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "Login",
+                      "ورود",
                       style: TextStyle(
                           color: TColor.primary,
                           fontSize: 14,
@@ -190,7 +184,7 @@ class _SignUpViewState extends State<SignUpView> {
       "email": txtEmail.text,
       "address": txtAddress.text,
       "password": txtPassword.text,
-      "push_token": "1234",
+      "push_token": "",
       "device_type": Platform.isAndroid ? "A" : "I"
     });
   }

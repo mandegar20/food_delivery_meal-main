@@ -31,7 +31,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 64,
               ),
               Text(
-                "Reset Password",
+                "بازنشانی رمز",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 30,
@@ -41,7 +41,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 15,
               ),
               Text(
-                "Please enter your email to receive a\n reset code to create a new password via email",
+                "لطفا ایمیل آدرس تان را بنویسید تا کد بازنشانی برای تان ارسال شود",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                     color: TColor.secondaryText,
@@ -52,7 +52,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 60,
               ),
               RoundTextfield(
-                hintText: "Your Email",
+                hintText: "ایمیل تان",
                 controller: txtEmail,
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -60,7 +60,7 @@ class _ResetPasswordViewState extends State<ResetPasswordView> {
                 height: 30,
               ),
               RoundButton(
-                  title: "Send",
+                  title: "فرستادن",
                   onPressed: () {
                     btnSubmit();
                   }),

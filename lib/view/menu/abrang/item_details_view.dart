@@ -259,16 +259,44 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 height: 20,
                               ),
                               Center(
-                                child: SizedBox(
-                                  width: 150,
-                                  height: 25,
-                                  child: RoundIconButton(
-                                    title: "افزودن به سبد خرید",
-                                    icon: "assets/img/shopping_add.png",
-                                    color: TColor.primary,
-                                    onPressed: () {},
-                                  ),
-                                ),
+                                child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            SizedBox(
+                                              width: 150,
+                                              height: 25,
+                                              child: RoundIconButton(
+                                                title: "افزودن به سبد خرید",
+                                                icon:
+                                                    "assets/img/shopping_add.png",
+                                                color: TColor.primary,
+                                                onPressed: () {},
+                                              ),
+                                            )
+                                          ]),
+                                      Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.end,
+                                          children: [
+                                            SizedBox(
+                                              width: 150,
+                                              height: 25,
+                                              child: RoundIconButton(
+                                                title: "خرید",
+                                                icon:
+                                                    "assets/img/shopping_add.png",
+                                                color: TColor.primary,
+                                                onPressed: () {},
+                                              ),
+                                            )
+                                          ])
+                                    ]),
                               ),
                             ]),
                       ),

@@ -36,13 +36,6 @@ class _AddCardViewState extends State<AddCardView> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                "Add Credit/Debit Card",
-                style: TextStyle(
-                    color: TColor.primaryText,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w700),
-              ),
               IconButton(
                 onPressed: () {
                   Navigator.pop(context);
@@ -52,7 +45,14 @@ class _AddCardViewState extends State<AddCardView> {
                   color: TColor.primaryText,
                   size: 25,
                 ),
-              )
+              ),
+              Text(
+                "اضافه کردن کارت پرداخت",
+                style: TextStyle(
+                    color: TColor.primaryText,
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700),
+              ),
             ],
           ),
           Divider(
@@ -63,7 +63,7 @@ class _AddCardViewState extends State<AddCardView> {
             height: 15,
           ),
           RoundTextfield(
-            hintText: "Card Number",
+            hintText: "شماره کارت",
             controller: txtCardNumber,
             keyboardType: TextInputType.number,
           ),
@@ -73,7 +73,7 @@ class _AddCardViewState extends State<AddCardView> {
           Row(
             children: [
               Text(
-                "Expiry",
+                "انقضا",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 14,
@@ -103,7 +103,7 @@ class _AddCardViewState extends State<AddCardView> {
             height: 15,
           ),
           RoundTextfield(
-            hintText: "Card Security Code",
+            hintText: "کد امنیتی کارت",
             controller: txtCardCode,
             keyboardType: TextInputType.number,
           ),
@@ -111,28 +111,20 @@ class _AddCardViewState extends State<AddCardView> {
             height: 15,
           ),
           RoundTextfield(
-            hintText: "First Name",
+            hintText: "نام",
             controller: txtFirstName,
           ),
           const SizedBox(
             height: 15,
           ),
           RoundTextfield(
-            hintText: "Last Name",
+            hintText: "تخلص",
             controller: txtLastName,
           ),
           const SizedBox(
             height: 15,
           ),
           Row(children: [
-            Text(
-              "You can remove this card at anytime",
-              style: TextStyle(
-                  color: TColor.secondaryText,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500),
-            ),
-            const Spacer(),
             Switch(
                 value: isAnyTime,
                 activeColor: TColor.primary,
@@ -140,13 +132,21 @@ class _AddCardViewState extends State<AddCardView> {
                   setState(() {
                     isAnyTime = newVal;
                   });
-                })
+                }),
+            const Spacer(),
+            Text(
+              "هر زمانی میتوانید کارت را حذف کنید",
+              style: TextStyle(
+                  color: TColor.secondaryText,
+                  fontSize: 14,
+                  fontWeight: FontWeight.w500),
+            ),
           ]),
           const SizedBox(
             height: 25,
           ),
           RoundIconButton(
-              title: "Add Card",
+              title: "اضافه کردن کارت",
               icon: "assets/img/add.png",
               color: TColor.primary,
               fontSize: 16,

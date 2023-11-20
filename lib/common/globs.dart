@@ -6,7 +6,7 @@ import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:colorful_effects/main.dart';
 
 class Globs {
-  static const appName = "Food Delivery";
+  static const appName = "گالری جلوه های رنگین";
 
   static const userPayload = "user_payload";
   static const userLogin = "user_login";
@@ -118,15 +118,14 @@ class KKey {
 }
 
 class MSG {
-  static const enterEmail = "Please enter your valid email address.";
-  static const enterName = "Please enter your name.";
-  static const enterCode = "Please enter valid reset code.";
+  static const enterEmail = "لطفا ایمیل آدرس معتبر بنویسید";
+  static const enterName = "نام خود را وارد کنید";
+  static const enterCode = "رمز بازنشانی درست را بنویسید";
 
-  static const enterMobile = "Please enter your valid mobile number.";
-  static const enterAddress = "Please enter your address.";
-  static const enterPassword =
-      "Please enter password minimum 6 characters at least.";
-  static const enterPasswordNotMatch = "Please enter password not match.";
-  static const success = "success";
-  static const fail = "fail";
+  static const enterMobile = "لطفا شماره تماس معتبر بنویسید";
+  static const enterAddress = "آدرس خود را وارد کنید";
+  static const enterPassword = ".رمز باید حداقل دارای شش واژه باشد";
+  static const enterPasswordNotMatch = "رمز مطابقت ندارد";
+  static const success = "موفقیت";
+  static const fail = "ناکام";
 }

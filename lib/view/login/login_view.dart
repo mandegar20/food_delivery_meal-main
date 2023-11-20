@@ -37,14 +37,14 @@ class _LoginViewState extends State<LoginView> {
                 height: 64,
               ),
               Text(
-                "Login",
+                "ورود",
                 style: TextStyle(
                     color: TColor.primaryText,
                     fontSize: 30,
                     fontWeight: FontWeight.w800),
               ),
               Text(
-                "Add your details to login",
+                "مشخصات خود را برای ورود بنویسید",
                 style: TextStyle(
                     color: TColor.secondaryText,
                     fontSize: 14,
@@ -54,7 +54,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Your Email",
+                hintText: "ایمیل",
                 controller: txtEmail,
                 keyboardType: TextInputType.emailAddress,
               ),
@@ -62,7 +62,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               RoundTextfield(
-                hintText: "Password",
+                hintText: "رمز",
                 controller: txtPassword,
                 obscureText: true,
               ),
@@ -70,7 +70,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 25,
               ),
               RoundButton(
-                  title: "Login",
+                  title: "ورود",
                   onPressed: () {
                     btnLogin();
                   }),
@@ -87,7 +87,7 @@ class _LoginViewState extends State<LoginView> {
                   );
                 },
                 child: Text(
-                  "Forgot your password?",
+                  "رمز خود را فراموش کرده اید؟",
                   style: TextStyle(
                       color: TColor.secondaryText,
                       fontSize: 14,
@@ -98,7 +98,7 @@ class _LoginViewState extends State<LoginView> {
                 height: 30,
               ),
               Text(
-                "or Login With",
+                "ورود با ",
                 style: TextStyle(
                     color: TColor.secondaryText,
                     fontSize: 14,
@@ -109,7 +109,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               RoundIconButton(
                 icon: "assets/img/facebook_logo.png",
-                title: "Login with Facebook",
+                title: "فیسبوک",
                 color: const Color(0xff367FC0),
                 onPressed: () {},
               ),
@@ -118,7 +118,7 @@ class _LoginViewState extends State<LoginView> {
               ),
               RoundIconButton(
                 icon: "assets/img/google_logo.png",
-                title: "Login with Google",
+                title: "گوگل",
                 color: const Color(0xffDD4B39),
                 onPressed: () {},
               ),
@@ -138,14 +138,14 @@ class _LoginViewState extends State<LoginView> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Don't have an Account? ",
+                      "حساب کاربری ندارید؟ ",
                       style: TextStyle(
                           color: TColor.secondaryText,
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      "Sign Up",
+                      "ایجاد حساب",
                       style: TextStyle(
                           color: TColor.primary,
                           fontSize: 14,

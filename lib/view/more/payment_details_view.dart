@@ -49,7 +49,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                     ),
                     Expanded(
                       child: Text(
-                        "Payment Details",
+                        "جزئیات پرداخت",
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 20,
@@ -76,7 +76,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 15, horizontal: 25),
                 child: Text(
-                  "Customize your payment method",
+                  "طریقه پرداخت تان را خصوصی سازی کنید",
                   style: TextStyle(
                       color: TColor.primaryText,
                       fontSize: 16,
@@ -111,7 +111,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Cash/Card On Delivery",
+                            "نقد/کارت برای پرداخت",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 12,
@@ -166,7 +166,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                                 width: 100,
                                 height: 28,
                                 child: RoundButton(
-                                  title: 'Delete Card',
+                                  title: 'حذف کارت',
                                   fontSize: 12,
                                   onPressed: () {},
                                   type: RoundButtonType.textPrimary,
@@ -191,7 +191,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Text(
-                            "Other Methods",
+                            "طریقه های دیگر",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 12,
@@ -212,7 +212,7 @@ class _PaymentDetailsViewState extends State<PaymentDetailsView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 25),
                 child: RoundIconButton(
-                    title: "Add Another Credit/Debit Card",
+                    title: "اضافه کردن کارت",
                     icon: "assets/img/add.png",
                     color: TColor.primary,
                     fontSize: 16,
