@@ -217,7 +217,7 @@ class _MenuItemsViewState extends State<MenuAbrangView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ItemDetailsView()),
+                            builder: (context) => ItemDetailsView(data: mObj)),
                       );
                     },
                   );

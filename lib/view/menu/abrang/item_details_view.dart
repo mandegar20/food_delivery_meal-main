@@ -6,7 +6,9 @@ import '../../../common/color_extension.dart';
 import '../../more/my_order_view.dart';
 
 class ItemDetailsView extends StatefulWidget {
-  const ItemDetailsView({super.key});
+  const ItemDetailsView({super.key, required this.data});
+
+  final Map data;
 
   @override
   State<ItemDetailsView> createState() => _ItemDetailsViewState();
@@ -19,6 +21,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
 
   @override
   Widget build(BuildContext context) {
+    print('data: ${widget.data}');
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: TColor.white,
@@ -26,7 +29,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
         alignment: Alignment.topCenter,
         children: [
           Image.asset(
-            "assets/img/painting5.jpg",
+            widget.data['image'],
             width: media.width,
             height: media.width,
             fit: BoxFit.cover,
@@ -72,7 +75,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "آسمان نیلگون",
+                                        widget.data['name'],
                                         style: TextStyle(
                                             color: TColor.primaryText,
                                             fontSize: 22,
@@ -96,7 +99,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                           CrossAxisAlignment.end,
                                       children: [
                                         Text(
-                                          "AFN${price.toStringAsFixed(2)}",
+                                          "AFN${widget.data['price']}",
                                           style: TextStyle(
                                               color: TColor.primaryText,
                                               fontSize: 31,
@@ -112,7 +115,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            " عبدلواحد علیار",
+                                            widget.data['artist'],
                                             style: TextStyle(
                                                 color: TColor.primary,
                                                 fontSize: 14,

@@ -12,9 +12,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'common/globs.dart';
 import 'common/my_http_overrides.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 SharedPreferences? prefs;
-void main() async {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   setUpLocator();
   HttpOverrides.global = MyHttpOverrides();
   WidgetsFlutterBinding.ensureInitialized();
