@@ -28,7 +28,7 @@ class _MenuItemsViewState extends State<MenuNewView> {
     },
     {
       "image": "assets/img/painting5.jpg",
-      "name": "عشق بی فرجام",
+      "name": "فرجام",
       "price": "3500",
       "rating": "124",
       "type": "کاک",
@@ -187,7 +187,7 @@ class _MenuItemsViewState extends State<MenuNewView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: RoundTextfield(
-                  hintText: "Search Food",
+                  hintText: "جستجو",
                   controller: txtSearch,
                   left: Container(
                     alignment: Alignment.center,

@@ -10,6 +10,7 @@ import '../../common_widget/popular_resutaurant_row.dart';
 import '../../common_widget/recent_item_row.dart';
 import '../../common_widget/view_all_title_row.dart';
 import '../more/my_order_view.dart';
+import '.././menu/new/menu_new_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -307,10 +308,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ViewAllTitleRow(
-                  title: "جدیدترین ها",
-                  onView: () {},
-                ),
+                child: ViewAllTitleRow(title: "جدیدترین ها", onView: () {}),
               ),
               ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
@@ -328,7 +326,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "محبوب ترین ها",
+                  title: "روغن رنگی",
                   onView: () {},
                 ),
               ),
@@ -350,7 +348,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "تازگی اضافه شده",
+                  title: "پنسل ساده",
                   onView: () {},
                 ),
               ),
