@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "35295899385",
+    "project_id": "colorfuleffects-3cac2",
+    "storage_bucket": "colorfuleffects-3cac2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:35295899385:android:3128230c1f762f9b5a3c28",
+        "android_client_info": {
+          "package_name": "com.codeforany.colorful_effects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC2ipeMDeociefenoub0rzKMyRKEzWmXgs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
