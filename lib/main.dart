@@ -30,6 +30,8 @@ Future<void> main() async {
     ServiceCall.userPayload = Globs.udValue(Globs.userPayload);
   }
 
+  // WidgetsFlutterBinding.ensureInitialized();
+  // await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MyApp(
     defaultHome: StartupView(),
   ));
