@@ -4,7 +4,8 @@ import 'package:colorful_effects/common_widget/round_textfield.dart';
 
 import '../../../../common_widget/menu_item_row.dart';
 import '../../more/my_order_view.dart';
-import 'item_details_view.dart';
+
+import '../abrang/item_details_view.dart';
 
 class MenuNewView extends StatefulWidget {
   final Map mObj;
@@ -187,7 +188,7 @@ class _MenuItemsViewState extends State<MenuNewView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: RoundTextfield(
-                  hintText: "Search Food",
+                  hintText: "جستجو",
                   controller: txtSearch,
                   left: Container(
                     alignment: Alignment.center,
@@ -216,8 +217,7 @@ class _MenuItemsViewState extends State<MenuNewView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ItemDetailsView()),
-                        //this should discussed deeply
+                            builder: (context) => ItemDetailsView(data: mObj)),
                       );
                     },
                   );

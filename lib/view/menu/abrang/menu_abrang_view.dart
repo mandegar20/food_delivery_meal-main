@@ -188,7 +188,7 @@ class _MenuItemsViewState extends State<MenuAbrangView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: RoundTextfield(
-                  hintText: "Search Food",
+                  hintText: "جستجو",
                   controller: txtSearch,
                   left: Container(
                     alignment: Alignment.center,
@@ -217,7 +217,7 @@ class _MenuItemsViewState extends State<MenuAbrangView> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const ItemDetailsView()),
+                            builder: (context) => ItemDetailsView(data: mObj)),
                       );
                     },
                   );
