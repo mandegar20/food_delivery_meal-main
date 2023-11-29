@@ -103,7 +103,7 @@ class _ProfileViewState extends State<ProfileView> {
             ),
           ),
           Text(
-            "محمد بهمنی",
+            txtName.text,
             style: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 16,
