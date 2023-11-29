@@ -127,5 +127,5 @@ class MSG {
   static const enterPassword = ".رمز باید حداقل دارای شش واژه باشد";
   static const enterPasswordNotMatch = "رمز مطابقت ندارد";
   static const success = "موفقیت";
-  static const fail = "ناکام";
+  static const fail = "رمز یا ایمیل اشتباه";
 }
