@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046075671423",
+    "project_id": "fir-gallery-7a6cc",
+    "storage_bucket": "fir-gallery-7a6cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046075671423:android:044f3f8f5181f03a37904a",
+        "android_client_info": {
+          "package_name": "com.codeforany.colorful_effects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDRLMUsSf9Tjb3YBZKD-AZ3XiCTZfCZiE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
