@@ -1,12 +1,14 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:colorful_effects/view/more/about_us_view.dart';
 import 'package:colorful_effects/view/more/inbox_view.dart';
 import 'package:colorful_effects/view/more/payment_details_view.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../common/color_extension.dart';
 import '../../common/service_call.dart';
 import 'my_order_view.dart';
 import 'notification_view.dart';
+import '../login/welcome_view.dart';
 
 class MoreView extends StatefulWidget {
   const MoreView({super.key});
@@ -115,7 +117,14 @@ class _MoreViewState extends State<MoreView> {
                                 MaterialPageRoute(
                                     builder: (context) => const AboutUsView()));
                           case "6":
-                            ServiceCall.logout();
+                            // ServiceCall.logout();
+                            FirebaseAuth.instance.signOut().then((value) {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const WelcomeView()));
+                            });
 
                           default:
                         }

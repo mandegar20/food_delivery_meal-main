@@ -12,12 +12,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'common/globs.dart';
 import 'common/my_http_overrides.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 SharedPreferences? prefs;
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   setUpLocator();
   HttpOverrides.global = MyHttpOverrides();
-  WidgetsFlutterBinding.ensureInitialized();
   prefs = await SharedPreferences.getInstance();
 
   if (Globs.udValueBool(Globs.userLogin)) {

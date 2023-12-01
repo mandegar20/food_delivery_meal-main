@@ -5,7 +5,7 @@ import 'package:colorful_effects/common/color_extension.dart';
 import 'package:colorful_effects/common/extension.dart';
 import 'package:colorful_effects/common_widget/round_button.dart';
 import 'package:colorful_effects/view/login/login_view.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../common/globs.dart';
 // import '../../common/service_call.dart';
 import '../../common_widget/round_textfield.dart';
@@ -176,17 +176,27 @@ class _SignUpViewState extends State<SignUpView> {
       return;
     }
 
-    endEditing();
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+            email: txtEmail.text, password: txtPassword.text)
+        .then((value) => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const OnBoardingView(),
+            )))
+        .onError((error, stackTrace) => print("error, ${error.toString()}"));
 
-    serviceCallSignUp({
-      "name": txtName.text,
-      "mobile": txtMobile.text,
-      "email": txtEmail.text,
-      "address": txtAddress.text,
-      "password": txtPassword.text,
-      "push_token": "",
-      "device_type": Platform.isAndroid ? "A" : "I"
-    });
+    // endEditing();
+
+    // serviceCallSignUp({
+    //   "name": txtName.text,
+    //   "mobile": txtMobile.text,
+    //   "email": txtEmail.text,
+    //   "address": txtAddress.text,
+    //   "password": txtPassword.text,
+    //   "push_token": "",
+    //   "device_type": Platform.isAndroid ? "A" : "I"
+    // });
   }
 
 //   void serviceCallSignUp(Map<String, dynamic> parameter) {
