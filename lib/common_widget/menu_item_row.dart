@@ -44,7 +44,7 @@ class MenuItemRow extends StatelessWidget {
                         mObj["name"],
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                            color: TColor.white,
+                            color: TColor.primary,
                             fontSize: 18,
                             fontWeight: FontWeight.w700),
                       ),
