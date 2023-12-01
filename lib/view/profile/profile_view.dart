@@ -3,10 +3,11 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:colorful_effects/common_widget/round_button.dart';
 import 'package:image_picker/image_picker.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../common/color_extension.dart';
 import '../../common_widget/round_textfield.dart';
 import '../more/my_order_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileView extends StatefulWidget {
   const ProfileView({super.key});
@@ -18,13 +19,51 @@ class ProfileView extends StatefulWidget {
 class _ProfileViewState extends State<ProfileView> {
   final ImagePicker picker = ImagePicker();
   XFile? image;
+  String? username;
 
-  TextEditingController txtName = TextEditingController();
-  TextEditingController txtEmail = TextEditingController();
-  TextEditingController txtMobile = TextEditingController();
-  TextEditingController txtAddress = TextEditingController();
-  TextEditingController txtPassword = TextEditingController();
-  TextEditingController txtConfirmPassword = TextEditingController();
+  Future<void> getUserData(String uid) async {
+    try {
+      DocumentSnapshot snapshot =
+          await FirebaseFirestore.instance.collection('users').doc(uid).get();
+      if (snapshot.exists) {
+        // User data found
+        Map<String, dynamic> userData = snapshot.data() as Map<String, dynamic>;
+
+        // Access specific fields
+        username = userData['name'];
+        String email = userData['email'];
+
+        String retrievedUsername = userData['name'];
+
+        setState(() {
+          username = retrievedUsername; // Update the username variable
+        });
+        // Process the data as needed
+        print('Username: $username');
+        print('Email: $email');
+      } else {
+        // User data not found
+        print('User not found');
+      }
+    } catch (e) {
+      // Error occurred
+      print('Error getting user data: $e');
+    }
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    User? user = FirebaseAuth.instance.currentUser;
+    String uid = '68oRMUYpvQVGwwx71M86VY0hLal2';
+    if (user != null) {
+      uid = user.uid;
+      print('User UID: $uid');
+    } else {
+      print('User is not signed in.');
+    }
+    getUserData(uid);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,7 +142,7 @@ class _ProfileViewState extends State<ProfileView> {
             ),
           ),
           Text(
-            "محمد بهمنی",
+            username ?? 'username',
             style: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 16,
@@ -122,7 +161,15 @@ class _ProfileViewState extends State<ProfileView> {
           const SizedBox(
             height: 20,
           ),
-          // Padding(
+        ]),
+      ),
+    ));
+  }
+}
+
+
+
+// Padding(
           //   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
           //   child: RoundTitleTextfield(
           //     title: "Name",
@@ -184,8 +231,13 @@ class _ProfileViewState extends State<ProfileView> {
           // const SizedBox(
           //   height: 20,
           // ),
-        ]),
-      ),
-    ));
-  }
-}
+
+
+
+
+  //           TextEditingController txtName = TextEditingController();
+  // TextEditingController txtEmail = TextEditingController();
+  // TextEditingController txtMobile = TextEditingController();
+  // TextEditingController txtAddress = TextEditingController();
+  // TextEditingController txtPassword = TextEditingController();
+  // TextEditingController txtConfirmPassword = TextEditingController();
