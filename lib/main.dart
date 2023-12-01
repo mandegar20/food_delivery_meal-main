@@ -17,13 +17,14 @@ import 'firebase_options.dart';
 
 SharedPreferences? prefs;
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
 
   setUpLocator();
   HttpOverrides.global = MyHttpOverrides();
-  WidgetsFlutterBinding.ensureInitialized();
+
   prefs = await SharedPreferences.getInstance();
 
   if (Globs.udValueBool(Globs.userLogin)) {
