@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:colorful_effects/common/color_extension.dart';
 import 'package:colorful_effects/common_widget/round_button.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'checkout_view.dart';
 
 class MyOrderView extends StatefulWidget {
@@ -11,10 +11,25 @@ class MyOrderView extends StatefulWidget {
   State<MyOrderView> createState() => _MyOrderViewState();
 }
 
+Future<List<Map<String, dynamic>>> getAllArtworks() async {
+  QuerySnapshot querySnapshot =
+      await FirebaseFirestore.instance.collection('orders').get();
+  List<Map<String, dynamic>> artworksData = [];
+  print(querySnapshot);
+
+  querySnapshot.docs.forEach((artistDoc) {
+    Map<String, dynamic> artworkData = artistDoc.data() as Map<String, dynamic>;
+    artworksData.add(artworkData);
+    print(artworkData['image']);
+  });
+
+  print(artworksData.first);
+  return artworksData;
+}
+
 class _MyOrderViewState extends State<MyOrderView> {
   List itemArr = [
-    {"name": "افسوس", "price": 3900},
-    {"name": "دریا", "price": 5000},
+    {"name": "زمستان", "price": 8600},
   ];
 
   @override
@@ -46,7 +61,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                     ),
                     Expanded(
                       child: Text(
-                        "فرمایشات",
+                        "سبد خرید",
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 20,
@@ -129,7 +144,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "AFN 8900",
+                          "AFN 8600",
                           style: TextStyle(
                               color: TColor.primary,
                               fontSize: 13,
@@ -182,7 +197,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                               fontWeight: FontWeight.w700),
                         ),
                         Text(
-                          "AFN 8950",
+                          "AFN 8650",
                           style: TextStyle(
                               color: TColor.primary,
                               fontSize: 22,
@@ -194,7 +209,7 @@ class _MyOrderViewState extends State<MyOrderView> {
                       height: 25,
                     ),
                     RoundButton(
-                        title: "پرداخت هزینه",
+                        title: "خرید",
                         onPressed: () {
                           Navigator.push(
                             context,

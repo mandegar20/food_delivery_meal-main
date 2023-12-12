@@ -220,7 +220,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                               //                           height: 15,
                               //                         ),
                               //                         Text(
-                              //                           "...عبدلواحد علیار در سال 1359 در یک خانواده هنر دوست بدمیا آمد و ",
+                              //                           "...ظریف شریفی در سال 1359 در یک خانواده هنر دوست بدمیا آمد و ",
                               //                           style: TextStyle(
                               //                               color: TColor
                               //                                   .primaryText,

@@ -26,7 +26,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -34,7 +34,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting3.jpg",
@@ -42,7 +42,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -50,7 +50,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -58,7 +58,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting.jpg",
@@ -66,7 +66,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -74,7 +74,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -82,7 +82,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting4.jpg",
@@ -90,7 +90,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -98,7 +98,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -106,7 +106,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -114,7 +114,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -122,7 +122,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -130,7 +130,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
 

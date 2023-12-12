@@ -5,6 +5,7 @@ import '../common/color_extension.dart';
 class MenuItemRow extends StatelessWidget {
   final Map mObj;
   final VoidCallback onTap;
+
   const MenuItemRow({super.key, required this.mObj, required this.onTap});
 
   @override
@@ -16,7 +17,7 @@ class MenuItemRow extends StatelessWidget {
         child: Stack(
           alignment: Alignment.bottomLeft,
           children: [
-            Image.asset(
+            Image.network(
               mObj["image"].toString(),
               width: double.maxFinite,
               height: 200,
@@ -67,7 +68,7 @@ class MenuItemRow extends StatelessWidget {
                             width: 8,
                           ),
                           Text(
-                            mObj["type"],
+                            mObj["paperMaterial"],
                             textAlign: TextAlign.center,
                             style: TextStyle(color: TColor.white, fontSize: 11),
                           ),
@@ -78,7 +79,7 @@ class MenuItemRow extends StatelessWidget {
                                 TextStyle(color: TColor.primary, fontSize: 11),
                           ),
                           Text(
-                            mObj["artist"],
+                            mObj["artistName"],
                             textAlign: TextAlign.center,
                             style: TextStyle(color: TColor.white, fontSize: 12),
                           ),

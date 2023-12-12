@@ -36,39 +36,39 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting2.jpg",
-      "name": "مسیر غروب",
+      "image": "assets/img/gol-and-murgh.jpg",
+      "name": "گل و پروانه های بهاری",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "ذغالی",
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting3.jpg",
-      "name": "مسافر",
+      "image": "assets/img/abiyana.jpg",
+      "name": "ابیانه",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "خودکار رنگی",
+      "artist": "جواد عزیزی"
     },
     {
-      "image": "assets/img/painting7.jpg",
-      "name": "غروب",
+      "image": "assets/img/morgh-bahari.jpg",
+      "name": "گل و مرغ بهاری",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "آبرنگ",
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting8.jpg",
+      "image": "assets/img/gol-farangi.jpg",
       "name": "راه بی پایان",
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     }
   ];
 
@@ -79,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -87,7 +87,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting4.jpg",
@@ -95,7 +95,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -103,7 +103,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -111,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -119,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -127,7 +127,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -135,7 +135,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
 
@@ -146,7 +146,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -154,7 +154,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -162,7 +162,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting.jpg",
@@ -170,7 +170,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -178,7 +178,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -186,7 +186,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
 

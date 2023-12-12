@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:colorful_effects/common_widget/round_icon_button.dart';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../../common/color_extension.dart';
 import '../../more/my_order_view.dart';
 
@@ -14,6 +14,27 @@ class ItemDetailsView extends StatefulWidget {
   State<ItemDetailsView> createState() => _ItemDetailsViewState();
 }
 
+class Order {
+  final String orderId;
+  final String name;
+  final String totalAmount;
+
+  Order({required this.orderId, required this.name, required this.totalAmount});
+}
+
+Future<void> addOrder(Order order) async {
+  try {
+    await FirebaseFirestore.instance.collection('orders').add({
+      'orderId': order.orderId,
+      'name': order.name,
+      'totalAmount': order.totalAmount,
+    });
+    print('Order added successfully');
+  } catch (e) {
+    print('Error adding order: $e');
+  }
+}
+
 class _ItemDetailsViewState extends State<ItemDetailsView> {
   double price = 3800;
   int qty = 1;
@@ -22,14 +43,15 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
   @override
   Widget build(BuildContext context) {
     print('data: ${widget.data}');
+    Map<dynamic, dynamic> data = widget.data;
     var media = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: TColor.white,
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Image.asset(
-            widget.data['image'],
+          Image.network(
+            widget.data['image'].toString(),
             width: media.width,
             height: media.width,
             fit: BoxFit.cover,
@@ -115,7 +137,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            widget.data['artist'],
+                                            widget.data['artistName'],
                                             style: TextStyle(
                                                 color: TColor.primary,
                                                 fontSize: 14,
@@ -146,7 +168,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare leo non mollis id cursus. Eu euismod faucibus in leo malesuada",
+                                  widget.data['description'],
                                   style: TextStyle(
                                       color: TColor.secondaryText,
                                       fontSize: 12),
@@ -165,98 +187,6 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                   )),
                               const SizedBox(
                                 height: 20,
-                              ),
-                              SizedBox(
-                                height: 220,
-                                child: Stack(
-                                  alignment: Alignment.centerLeft,
-                                  children: [
-                                    Container(
-                                      width: media.width * 0.25,
-                                      height: 160,
-                                      decoration: BoxDecoration(
-                                        color: TColor.primary,
-                                        borderRadius: const BorderRadius.only(
-                                            topRight: Radius.circular(35),
-                                            bottomRight: Radius.circular(35)),
-                                      ),
-                                    ),
-                                    Center(
-                                      child: Stack(
-                                        alignment: Alignment.centerRight,
-                                        children: [
-                                          Container(
-                                              margin: const EdgeInsets.only(
-                                                  top: 8,
-                                                  bottom: 8,
-                                                  left: 10,
-                                                  right: 20),
-                                              width: media.width - 80,
-                                              height: 420,
-                                              decoration: const BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  35),
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  35),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  10),
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  10)),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                        color: Colors.black12,
-                                                        blurRadius: 12,
-                                                        offset: Offset(0, 4))
-                                                  ]),
-                                              child: Padding(
-                                                  padding: const EdgeInsets.all(
-                                                      20.0),
-                                                  child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(
-                                                        "درباره هنرمند",
-                                                        style: TextStyle(
-                                                            color: TColor
-                                                                .primaryText,
-                                                            fontSize: 17,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w700),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                      Text(
-                                                        "...عبدلواحد علیار در سال 1359 در یک خانواده هنر دوست بدمیا آمد و ",
-                                                        style: TextStyle(
-                                                            color: TColor
-                                                                .primaryText,
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w400),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                    ],
-                                                  ))),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
                               ),
                               const SizedBox(
                                 height: 20,
@@ -279,7 +209,16 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                                 icon:
                                                     "assets/img/shopping_add.png",
                                                 color: TColor.primary,
-                                                onPressed: () {},
+                                                onPressed: () {
+                                                  Order newOrder = Order(
+                                                    orderId: widget.data[
+                                                        'id'], // Replace with the actual order ID
+                                                    name: widget.data[
+                                                        'name'], // Replace with the actual customer name
+                                                    totalAmount: widget.data[
+                                                        'price'], // Replace with the actual total amount
+                                                  );
+                                                },
                                               ),
                                             )
                                           ]),
@@ -353,10 +292,17 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                       ),
                       IconButton(
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const MyOrderView()));
+                          Order newOrder = Order(
+                            orderId: widget
+                                .data['id'], // Replace with the actual order ID
+                            name: widget.data[
+                                'name'], // Replace with the actual customer name
+                            totalAmount: widget.data[
+                                'price'], // Replace with the actual total amount
+                          );
+
+                          // Call the addOrder function to add the order to the Firestore collection
+                          addOrder(newOrder);
                         },
                         icon: Image.asset(
                           "assets/img/shopping_cart.png",
