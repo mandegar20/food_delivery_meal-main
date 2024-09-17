@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 
-import '../common/color_extension.dart';
+import '../../../common/color_extension.dart';
 
 class MenuItemRow extends StatelessWidget {
   final Map mObj;
   final VoidCallback onTap;
 
   const MenuItemRow({super.key, required this.mObj, required this.onTap});
+
+  // Future<String> downloadImage(String storageLocation) async {
+  //   String downloadUrl = await firebase_storage.FirebaseStorage.instance
+  //       .ref(storageLocation)
+  //       .getDownloadURL();
+
+  //   return downloadUrl;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +26,7 @@ class MenuItemRow extends StatelessWidget {
           alignment: Alignment.bottomLeft,
           children: [
             Image.network(
-              mObj["image"].toString(),
+              mObj['image'].toString(),
               width: double.maxFinite,
               height: 200,
               fit: BoxFit.cover,
@@ -52,39 +60,39 @@ class MenuItemRow extends StatelessWidget {
                       const SizedBox(
                         height: 4,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          const SizedBox(
-                            width: 4,
-                          ),
-                          Text(
-                            mObj["price"],
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: TColor.primary, fontSize: 11),
-                          ),
-                          const SizedBox(
-                            width: 8,
-                          ),
-                          Text(
-                            mObj["paperMaterial"],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: TColor.white, fontSize: 11),
-                          ),
-                          Text(
-                            " . ",
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(color: TColor.primary, fontSize: 11),
-                          ),
-                          Text(
-                            mObj["artistName"],
-                            textAlign: TextAlign.center,
-                            style: TextStyle(color: TColor.white, fontSize: 12),
-                          ),
-                        ],
-                      ),
+                      // Row(
+                      //   mainAxisAlignment: MainAxisAlignment.end,
+                      //   children: [
+                      //     const SizedBox(
+                      //       width: 4,
+                      //     ),
+                      //     Text(
+                      //       mObj["price"],
+                      //       textAlign: TextAlign.center,
+                      //       style:
+                      //           TextStyle(color: TColor.primary, fontSize: 11),
+                      //     ),
+                      //     const SizedBox(
+                      //       width: 8,
+                      //     ),
+                      //     Text(
+                      //       mObj["type"],
+                      //       textAlign: TextAlign.center,
+                      //       style: TextStyle(color: TColor.white, fontSize: 11),
+                      //     ),
+                      //     Text(
+                      //       " . ",
+                      //       textAlign: TextAlign.center,
+                      //       style:
+                      //           TextStyle(color: TColor.primary, fontSize: 11),
+                      //     ),
+                      //     Text(
+                      //       mObj["artist"],
+                      //       textAlign: TextAlign.center,
+                      //       style: TextStyle(color: TColor.white, fontSize: 12),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),

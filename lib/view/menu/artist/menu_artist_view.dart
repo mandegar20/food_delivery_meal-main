@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:colorful_effects/common/color_extension.dart';
 import 'package:colorful_effects/common_widget/round_textfield.dart';
-
-import '../../../../common_widget/menu_item_row.dart';
+import 'package:firebase_storage/firebase_storage.dart' as firebase_storage;
+import './menu_item_row.dart';
 import '../../more/my_order_view.dart';
 import 'item_details_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 
 class MenuArtistView extends StatefulWidget {
   final Map mObj;
@@ -24,7 +26,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -32,7 +34,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting3.jpg",
@@ -40,7 +42,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -48,7 +50,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -56,7 +58,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting.jpg",
@@ -64,7 +66,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -72,7 +74,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -80,7 +82,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "4900",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting4.jpg",
@@ -88,7 +90,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -96,7 +98,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -104,7 +106,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -112,7 +114,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -120,7 +122,7 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -128,9 +130,45 @@ class _MenuItemsViewState extends State<MenuArtistView> {
       "price": "3500",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
+
+  Future<List<Map<String, dynamic>>> getAllArtists() async {
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection('artist').get();
+    List<Map<String, dynamic>> artistsData = [];
+    print(querySnapshot);
+
+    querySnapshot.docs.forEach((artistDoc) {
+      Map<String, dynamic> artistData =
+          artistDoc.data() as Map<String, dynamic>;
+      artistsData.add(artistData);
+      print(artistData['image']);
+    });
+
+    print(artistsData.first);
+    return artistsData;
+  }
+
+  // Future<String> getArtistDownloadUrl(storageLocation) async {
+  //   String downloadUrl = await firebase_storage.FirebaseStorage.instance
+  //       .ref(storageLocation)
+  //       .getDownloadURL();
+
+  //   return downloadUrl;
+  //   // String storageLocation = 'gs://artgallery-b26d7.appspot.com/abiyana.jpg';
+
+  //   // Reference imageRef = FirebaseStorage.instance.ref().child(storageLocation);
+  //   // String imageUrl = await imageRef.getDownloadURL();
+  //   // print('Image URL: $imageUrl');
+  // }
+
+  @override
+  void initState() {
+    super.initState();
+    getAllArtists();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -204,24 +242,56 @@ class _MenuItemsViewState extends State<MenuArtistView> {
               const SizedBox(
                 height: 15,
               ),
-              ListView.builder(
-                physics: const NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                padding: EdgeInsets.zero,
-                itemCount: menuItemsArr.length,
-                itemBuilder: ((context, index) {
-                  var mObj = menuItemsArr[index] as Map? ?? {};
-                  return MenuItemRow(
-                    mObj: mObj,
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const ItemDetailsView()),
-                      );
-                    },
-                  );
-                }),
+              // ListView.builder(
+              //   physics: const NeverScrollableScrollPhysics(),
+              //   shrinkWrap: true,
+              //   padding: EdgeInsets.zero,
+              //   itemCount: menuItemsArr.length,
+              //   itemBuilder: ((context, index) {
+              //     var mObj = menuItemsArr[index] as Map? ?? {};
+              //     return MenuItemRow(
+              //       mObj: mObj,
+              //       onTap: () {
+              //         Navigator.push(
+              //           context,
+              //           MaterialPageRoute(
+              //               builder: (context) => const ItemDetailsView()),
+              //         );
+              //       },
+              //     );
+              //   }),
+              // ),
+              FutureBuilder<List<Map<String, dynamic>>>(
+                future: getAllArtists(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    List<Map<String, dynamic>> artists = snapshot.data!;
+                    return ListView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      padding: EdgeInsets.zero,
+                      itemCount: artists.length,
+                      itemBuilder: (context, index) {
+                        var mObj = artists[index];
+                        return MenuItemRow(
+                          mObj: mObj,
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      ItemDetailsView(data: mObj)),
+                            );
+                          },
+                        );
+                      },
+                    );
+                  } else if (snapshot.hasError) {
+                    return Text('Error retrieving artists: ${snapshot.error}');
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
+                },
               ),
             ],
           ),

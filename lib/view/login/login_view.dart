@@ -6,7 +6,7 @@ import 'package:colorful_effects/common_widget/round_button.dart';
 import 'package:colorful_effects/view/login/rest_password_view.dart';
 import 'package:colorful_effects/view/login/sing_up_view.dart';
 import 'package:colorful_effects/view/on_boarding/on_boarding_view.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 // import '../../common/service_call.dart';
 import '../../common_widget/round_icon_button.dart';
 import '../../common_widget/round_textfield.dart';
@@ -172,13 +172,24 @@ class _LoginViewState extends State<LoginView> {
       return;
     }
 
-    endEditing();
+    // endEditing();
 
-    serviceCallLogin({
-      "email": txtEmail.text,
-      "password": txtPassword.text,
-      "push_token": "1234"
-    });
+    // serviceCallLogin({
+    //   "email": txtEmail.text,
+    //   "password": txtPassword.text,
+    //   "push_token": "1234"
+    // });
+    FirebaseAuth.instance
+        .signInWithEmailAndPassword(
+            email: txtEmail.text, password: txtPassword.text)
+        .then((value) => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const OnBoardingView(),
+            )))
+        .onError(
+          (error, stackTrace) => mdShowAlert(Globs.appName, MSG.fail, () {}),
+        );
   }
 
   // void serviceCallLogin(Map<String, dynamic> parameter) {
@@ -207,17 +218,17 @@ class _LoginViewState extends State<LoginView> {
   //   });
   // }
 
-  void serviceCallLogin(Map<String, dynamic> parameter) {
-    // Globs.showHUD();
+  // void serviceCallLogin(Map<String, dynamic> parameter) {
+  //   // Globs.showHUD();
 
-    // Remove the ServiceCall.post() code block
+  //   // Remove the ServiceCall.post() code block
 
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const OnBoardingView(),
-      ),
-      (route) => false,
-    );
-  }
+  //   Navigator.pushAndRemoveUntil(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const OnBoardingView(),
+  //     ),
+  //     (route) => false,
+  //   );
+  // }
 }

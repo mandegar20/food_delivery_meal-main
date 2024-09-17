@@ -5,11 +5,12 @@ import 'package:colorful_effects/common/color_extension.dart';
 import 'package:colorful_effects/common/extension.dart';
 import 'package:colorful_effects/common_widget/round_button.dart';
 import 'package:colorful_effects/view/login/login_view.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../../common/globs.dart';
 // import '../../common/service_call.dart';
 import '../../common_widget/round_textfield.dart';
 import '../on_boarding/on_boarding_view.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SignUpView extends StatefulWidget {
   const SignUpView({super.key});
@@ -176,17 +177,63 @@ class _SignUpViewState extends State<SignUpView> {
       return;
     }
 
-    endEditing();
+    // FirebaseAuth.instance
+    //     .createUserWithEmailAndPassword(
+    //         email: txtEmail.text, password: txtPassword.text)
+    //     .then((value) =>
 
-    serviceCallSignUp({
-      "name": txtName.text,
-      "mobile": txtMobile.text,
-      "email": txtEmail.text,
-      "address": txtAddress.text,
-      "password": txtPassword.text,
-      "push_token": "",
-      "device_type": Platform.isAndroid ? "A" : "I"
+    //     Navigator.push(
+    //         context,
+    //         MaterialPageRoute(
+    //           builder: (context) => const OnBoardingView(),
+    //         )))
+    //     .onError(
+    //       (error, stackTrace) => mdShowAlert(Globs.appName, MSG.fail, () {}),
+    //     );
+
+    FirebaseAuth.instance
+        .createUserWithEmailAndPassword(
+            email: txtEmail.text, password: txtPassword.text)
+        .then((userCredential) {
+      // Access the newly created user from the userCredential
+      var user = userCredential.user;
+
+      // Save additional user information to Firestore
+      saveUserInfo(user?.uid, txtName.text, txtAddress.text, txtMobile.text,
+          txtEmail.text);
+
+      // Navigate to the OnBoardingView
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const OnBoardingView()),
+      );
+    }).catchError((error) {
+      // Handle any errors that occur during the sign-up process
+      mdShowAlert(Globs.appName, MSG.fail, () {});
     });
+  }
+
+  Future<void> saveUserInfo(userId, String name, String address,
+      String phoneNumber, String email) async {
+    try {
+      // Create a reference to the user's document in Firestore
+      DocumentReference userRef =
+          FirebaseFirestore.instance.collection('users').doc(userId);
+
+      // Create a map with the user information
+      Map<String, dynamic> userInfo = {
+        'name': name,
+        'address': address,
+        'phoneNumber': phoneNumber,
+        'email': email,
+      };
+
+      // Save the user information to Firestore
+      await userRef.set(userInfo);
+    } catch (e) {
+      // Handle any errors that occur during the saving process
+      print('Error saving user information: $e');
+    }
   }
 
 //   void serviceCallSignUp(Map<String, dynamic> parameter) {
@@ -216,17 +263,17 @@ class _SignUpViewState extends State<SignUpView> {
 //   }
 // }
 
-  void serviceCallSignUp(Map<String, dynamic> parameter) {
-    // Globs.showHUD();
+  // void serviceCallSignUp(Map<String, dynamic> parameter) {
+  //   // Globs.showHUD();
 
-    // Remove the ServiceCall.post() code block
+  //   // Remove the ServiceCall.post() code block
 
-    Navigator.pushAndRemoveUntil(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const OnBoardingView(),
-      ),
-      (route) => false,
-    );
-  }
+  //   Navigator.pushAndRemoveUntil(
+  //     context,
+  //     MaterialPageRoute(
+  //       builder: (context) => const OnBoardingView(),
+  //     ),
+  //     (route) => false,
+  //   );
+  // }
 }

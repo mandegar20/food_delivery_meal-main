@@ -10,6 +10,7 @@ import '../../common_widget/popular_resutaurant_row.dart';
 import '../../common_widget/recent_item_row.dart';
 import '../../common_widget/view_all_title_row.dart';
 import '../more/my_order_view.dart';
+import '.././menu/new/menu_new_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({super.key});
@@ -35,39 +36,39 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting2.jpg",
-      "name": "مسیر غروب",
+      "image": "assets/img/gol-and-murgh.jpg",
+      "name": "گل و پروانه های بهاری",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "ذغالی",
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting3.jpg",
-      "name": "مسافر",
+      "image": "assets/img/abiyana.jpg",
+      "name": "ابیانه",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "خودکار رنگی",
+      "artist": "جواد عزیزی"
     },
     {
-      "image": "assets/img/painting7.jpg",
-      "name": "غروب",
+      "image": "assets/img/morgh-bahari.jpg",
+      "name": "گل و مرغ بهاری",
       "rate": "4.9",
       "rating": "124",
-      "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "type": "آبرنگ",
+      "artist": "ظریف شریفی"
     },
     {
-      "image": "assets/img/painting8.jpg",
+      "image": "assets/img/gol-farangi.jpg",
       "name": "راه بی پایان",
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     }
   ];
 
@@ -78,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -86,7 +87,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting4.jpg",
@@ -94,7 +95,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting5.jpg",
@@ -102,7 +103,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -110,7 +111,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -118,7 +119,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -126,7 +127,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting6.jpg.jpg",
@@ -134,7 +135,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
 
@@ -145,7 +146,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -153,7 +154,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -161,7 +162,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting.jpg",
@@ -169,7 +170,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting7.jpg",
@@ -177,7 +178,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
     {
       "image": "assets/img/painting8.jpg",
@@ -185,7 +186,7 @@ class _HomeViewState extends State<HomeView> {
       "rate": "4.9",
       "rating": "124",
       "type": "کاک",
-      "artist": "عبدلواحد علیار"
+      "artist": "ظریف شریفی"
     },
   ];
 
@@ -307,10 +308,7 @@ class _HomeViewState extends State<HomeView> {
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: ViewAllTitleRow(
-                  title: "جدیدترین ها",
-                  onView: () {},
-                ),
+                child: ViewAllTitleRow(title: "جدیدترین ها", onView: () {}),
               ),
               ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
@@ -328,7 +326,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "محبوب ترین ها",
+                  title: "روغن رنگی",
                   onView: () {},
                 ),
               ),
@@ -350,7 +348,7 @@ class _HomeViewState extends State<HomeView> {
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: ViewAllTitleRow(
-                  title: "تازگی اضافه شده",
+                  title: "پنسل ساده",
                   onView: () {},
                 ),
               ),

@@ -82,7 +82,7 @@ class PopularRestaurantRow extends StatelessWidget {
                             color: TColor.secondaryText, fontSize: 11),
                       ),
                       Text(
-                        ":نوعیت کاغذ",
+                        ":تکنیک",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: TColor.primary, fontSize: 11),
                       ),

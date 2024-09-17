@@ -50,7 +50,7 @@ class _CheckoutMessageViewState extends State<CheckoutMessageView> {
             height: 25,
           ),
           Text(
-            "Thank You!",
+            "تشکر",
             style: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 26,
@@ -60,7 +60,7 @@ class _CheckoutMessageViewState extends State<CheckoutMessageView> {
             height: 8,
           ),
           Text(
-            "for your order",
+            "از خرید شما",
             style: TextStyle(
                 color: TColor.primaryText,
                 fontSize: 17,
@@ -69,19 +69,19 @@ class _CheckoutMessageViewState extends State<CheckoutMessageView> {
           const SizedBox(
             height: 25,
           ),
-          Text(
-            "Your Order is now being processed. We will let you know once the order is picked from the outlet. Check the status of your Order",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: TColor.primaryText, fontSize: 14),
-          ),
+          // Text(
+          //   "Your Order is now being processed. We will let you know once the order is picked from the outlet. Check the status of your Order",
+          //   textAlign: TextAlign.center,
+          //   style: TextStyle(color: TColor.primaryText, fontSize: 14),
+          // ),
           const SizedBox(
             height: 35,
           ),
-          RoundButton(title: "Track My Order", onPressed: () {}),
+          // RoundButton(title: "Track My Order", onPressed: () {}),
           TextButton(
             onPressed: () {},
             child: Text(
-              "Back To Home",
+              "برگشت به مینوی اصلی",
               textAlign: TextAlign.center,
               style: TextStyle(
                   color: TColor.primaryText,

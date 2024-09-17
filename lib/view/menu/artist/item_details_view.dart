@@ -6,8 +6,8 @@ import '../../../common/color_extension.dart';
 import '../../more/my_order_view.dart';
 
 class ItemDetailsView extends StatefulWidget {
-  const ItemDetailsView({super.key});
-
+  const ItemDetailsView({super.key, required this.data});
+  final Map data;
   @override
   State<ItemDetailsView> createState() => _ItemDetailsViewState();
 }
@@ -25,8 +25,8 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
       body: Stack(
         alignment: Alignment.topCenter,
         children: [
-          Image.asset(
-            "assets/img/painting5.jpg",
+          Image.network(
+            widget.data['image'].toString(),
             width: media.width,
             height: media.width,
             fit: BoxFit.cover,
@@ -72,7 +72,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "آسمان نیلگون",
+                                        widget.data['name'],
                                         style: TextStyle(
                                             color: TColor.primaryText,
                                             fontSize: 22,
@@ -92,27 +92,11 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Column(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.end,
-                                      children: [
-                                        Text(
-                                          "AFN${price.toStringAsFixed(2)}",
-                                          style: TextStyle(
-                                              color: TColor.primaryText,
-                                              fontSize: 31,
-                                              fontWeight: FontWeight.w700),
-                                        ),
-                                        const SizedBox(
-                                          height: 4,
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
                                           Text(
-                                            " عبدلواحد علیار",
+                                            " هنرمند",
                                             style: TextStyle(
                                                 color: TColor.primary,
                                                 fontSize: 14,
@@ -129,7 +113,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  ":جزئیات",
+                                  ":زندگینامه",
                                   style: TextStyle(
                                       color: TColor.primaryText,
                                       fontSize: 14,
@@ -143,7 +127,7 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                                 padding:
                                     const EdgeInsets.symmetric(horizontal: 25),
                                 child: Text(
-                                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ornare leo non mollis id cursus. Eu euismod faucibus in leo malesuada",
+                                  widget.data['bio'],
                                   style: TextStyle(
                                       color: TColor.secondaryText,
                                       fontSize: 12),
@@ -163,113 +147,114 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                               const SizedBox(
                                 height: 20,
                               ),
-                              SizedBox(
-                                height: 220,
-                                child: Stack(
-                                  alignment: Alignment.centerLeft,
-                                  children: [
-                                    Container(
-                                      width: media.width * 0.25,
-                                      height: 160,
-                                      decoration: BoxDecoration(
-                                        color: TColor.primary,
-                                        borderRadius: const BorderRadius.only(
-                                            topRight: Radius.circular(35),
-                                            bottomRight: Radius.circular(35)),
-                                      ),
-                                    ),
-                                    Center(
-                                      child: Stack(
-                                        alignment: Alignment.centerRight,
-                                        children: [
-                                          Container(
-                                              margin: const EdgeInsets.only(
-                                                  top: 8,
-                                                  bottom: 8,
-                                                  left: 10,
-                                                  right: 20),
-                                              width: media.width - 80,
-                                              height: 420,
-                                              decoration: const BoxDecoration(
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.only(
-                                                          topLeft:
-                                                              Radius.circular(
-                                                                  35),
-                                                          bottomLeft:
-                                                              Radius.circular(
-                                                                  35),
-                                                          topRight:
-                                                              Radius.circular(
-                                                                  10),
-                                                          bottomRight:
-                                                              Radius.circular(
-                                                                  10)),
-                                                  boxShadow: [
-                                                    BoxShadow(
-                                                        color: Colors.black12,
-                                                        blurRadius: 12,
-                                                        offset: Offset(0, 4))
-                                                  ]),
-                                              child: Padding(
-                                                  padding: const EdgeInsets.all(
-                                                      20.0),
-                                                  child: Column(
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment.start,
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment.end,
-                                                    children: [
-                                                      Text(
-                                                        "درباره هنرمند",
-                                                        style: TextStyle(
-                                                            color: TColor
-                                                                .primaryText,
-                                                            fontSize: 17,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w700),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                      Text(
-                                                        "...عبدلواحد علیار در سال 1359 در یک خانواده هنر دوست بدمیا آمد و ",
-                                                        style: TextStyle(
-                                                            color: TColor
-                                                                .primaryText,
-                                                            fontSize: 12,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .w400),
-                                                      ),
-                                                      const SizedBox(
-                                                        height: 15,
-                                                      ),
-                                                    ],
-                                                  ))),
-                                        ],
-                                      ),
-                                    )
-                                  ],
-                                ),
-                              ),
+
+                              // SizedBox(
+                              //   height: 220,
+                              //   child: Stack(
+                              //     alignment: Alignment.centerLeft,
+                              //     children: [
+                              //       Container(
+                              //         width: media.width * 0.25,
+                              //         height: 160,
+                              //         decoration: BoxDecoration(
+                              //           color: TColor.primary,
+                              //           borderRadius: const BorderRadius.only(
+                              //               topRight: Radius.circular(35),
+                              //               bottomRight: Radius.circular(35)),
+                              //         ),
+                              //       ),
+                              //       Center(
+                              //         child: Stack(
+                              //           alignment: Alignment.centerRight,
+                              //           children: [
+                              //             Container(
+                              //                 margin: const EdgeInsets.only(
+                              //                     top: 8,
+                              //                     bottom: 8,
+                              //                     left: 10,
+                              //                     right: 20),
+                              //                 width: media.width - 80,
+                              //                 height: 420,
+                              //                 decoration: const BoxDecoration(
+                              //                     color: Colors.white,
+                              //                     borderRadius:
+                              //                         BorderRadius.only(
+                              //                             topLeft:
+                              //                                 Radius.circular(
+                              //                                     35),
+                              //                             bottomLeft:
+                              //                                 Radius.circular(
+                              //                                     35),
+                              //                             topRight:
+                              //                                 Radius.circular(
+                              //                                     10),
+                              //                             bottomRight:
+                              //                                 Radius.circular(
+                              //                                     10)),
+                              //                     boxShadow: [
+                              //                       BoxShadow(
+                              //                           color: Colors.black12,
+                              //                           blurRadius: 12,
+                              //                           offset: Offset(0, 4))
+                              //                     ]),
+                              //                 child: Padding(
+                              //                     padding: const EdgeInsets.all(
+                              //                         20.0),
+                              //                     child: Column(
+                              //                       mainAxisAlignment:
+                              //                           MainAxisAlignment.start,
+                              //                       crossAxisAlignment:
+                              //                           CrossAxisAlignment.end,
+                              //                       children: [
+                              //                         Text(
+                              //                           "درباره هنرمند",
+                              //                           style: TextStyle(
+                              //                               color: TColor
+                              //                                   .primaryText,
+                              //                               fontSize: 17,
+                              //                               fontWeight:
+                              //                                   FontWeight
+                              //                                       .w700),
+                              //                         ),
+                              //                         const SizedBox(
+                              //                           height: 15,
+                              //                         ),
+                              //                         Text(
+                              //                           "...ظریف شریفی در سال 1359 در یک خانواده هنر دوست بدمیا آمد و ",
+                              //                           style: TextStyle(
+                              //                               color: TColor
+                              //                                   .primaryText,
+                              //                               fontSize: 12,
+                              //                               fontWeight:
+                              //                                   FontWeight
+                              //                                       .w400),
+                              //                         ),
+                              //                         const SizedBox(
+                              //                           height: 15,
+                              //                         ),
+                              //                       ],
+                              //                     ))),
+                              //           ],
+                              //         ),
+                              //       )
+                              //     ],
+                              //   ),
+                              // ),
                               const SizedBox(
                                 height: 20,
                               ),
-                              Center(
-                                child: SizedBox(
-                                  width: 150,
-                                  height: 25,
-                                  child: RoundIconButton(
-                                    title: "افزودن به سبد خرید",
-                                    icon: "assets/img/shopping_add.png",
-                                    color: TColor.primary,
-                                    onPressed: () {},
-                                  ),
-                                ),
-                              ),
+                              // Center(
+                              //   child: SizedBox(
+                              //     width: 150,
+                              //     height: 25,
+                              //     child: RoundIconButton(
+                              //       title: "افزودن به سبد خرید",
+                              //       icon: "assets/img/shopping_add.png",
+                              //       color: TColor.primary,
+                              //       onPressed: () {},
+                              //     ),
+                              //   ),
+                              // ),
                             ]),
                       ),
                       const SizedBox(
@@ -277,22 +262,22 @@ class _ItemDetailsViewState extends State<ItemDetailsView> {
                       ),
                     ],
                   ),
-                  Container(
-                    height: media.width - 20,
-                    alignment: Alignment.bottomLeft,
-                    margin: const EdgeInsets.only(right: 4),
-                    child: InkWell(
-                        onTap: () {
-                          isFav = !isFav;
-                          setState(() {});
-                        },
-                        child: Image.asset(
-                            isFav
-                                ? "assets/img/favorites_btn.png"
-                                : "assets/img/favorites_btn_2.png",
-                            width: 70,
-                            height: 70)),
-                  ),
+                  // Container(
+                  //   height: media.width - 20,
+                  //   alignment: Alignment.bottomLeft,
+                  //   margin: const EdgeInsets.only(right: 4),
+                  //   child: InkWell(
+                  //       onTap: () {
+                  //         isFav = !isFav;
+                  //         setState(() {});
+                  //       },
+                  //       child: Image.asset(
+                  //           isFav
+                  //               ? "assets/img/favorites_btn.png"
+                  //               : "assets/img/favorites_btn_2.png",
+                  //           width: 70,
+                  //           height: 70)),
+                  // ),
                 ],
               ),
             ),

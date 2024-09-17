@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "366939802103",
+    "firebase_url": "https://artgallery-b26d7-default-rtdb.firebaseio.com",
+    "project_id": "artgallery-b26d7",
+    "storage_bucket": "artgallery-b26d7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366939802103:android:a24e0c0e7c18a1fe7386f2",
+        "android_client_info": {
+          "package_name": "com.codeforany.colorful_effects"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwqD_pKdaOE0Bi6LyQsg5JN16z8JCgvH0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -16,7 +16,6 @@ class _CheckoutViewState extends State<CheckoutView> {
   List paymentArr = [
     {"name": "Cash on delivery", "icon": "assets/img/cash.png"},
     {"name": "**** **** **** 2187", "icon": "assets/img/visa_icon.png"},
-    {"name": "test@gmail.com", "icon": "assets/img/paypal.png"},
   ];
 
   int selectMethod = -1;
@@ -50,7 +49,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                     ),
                     Expanded(
                       child: Text(
-                        "Checkout",
+                        "پرداخت",
                         style: TextStyle(
                             color: TColor.primaryText,
                             fontSize: 20,
@@ -67,7 +66,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Delivery Address",
+                      "ادرس ارسال",
                       textAlign: TextAlign.center,
                       style:
                           TextStyle(color: TColor.secondaryText, fontSize: 12),
@@ -80,7 +79,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       children: [
                         Expanded(
                           child: Text(
-                            "653 Nostrand Ave.\nBrooklyn, NY 11216",
+                            "کابل",
                             style: TextStyle(
                                 color: TColor.primaryText,
                                 fontSize: 15,
@@ -90,24 +89,24 @@ class _CheckoutViewState extends State<CheckoutView> {
                         const SizedBox(
                           width: 4,
                         ),
-                        TextButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const ChangeAddressView()),
-                            );
-                          },
-                          child: Text(
-                            "Change",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: TColor.primary,
-                                fontSize: 13,
-                                fontWeight: FontWeight.w700),
-                          ),
-                        )
+                        // TextButton(
+                        //   onPressed: () {
+                        //     Navigator.push(
+                        //       context,
+                        //       MaterialPageRoute(
+                        //           builder: (context) =>
+                        //               const ChangeAddressView()),
+                        //     );
+                        //   },
+                        //   // child: Text(
+                        //   //   "Change",
+                        //   //   textAlign: TextAlign.center,
+                        //   //   style: TextStyle(
+                        //   //       color: TColor.primary,
+                        //   //       fontSize: 13,
+                        //   //       fontWeight: FontWeight.w700),
+                        //   // ),
+                        // )
                       ],
                     ),
                   ],
@@ -129,7 +128,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Payment method",
+                          "طریقه پرداخت",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.secondaryText,
@@ -140,7 +139,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                           onPressed: () {},
                           icon: Icon(Icons.add, color: TColor.primary),
                           label: Text(
-                            "Add Card",
+                            "افزودن کارت",
                             style: TextStyle(
                                 color: TColor.primary,
                                 fontSize: 13,
@@ -221,7 +220,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Sub Total",
+                          "زیر مجموع",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -229,7 +228,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               fontWeight: FontWeight.w500),
                         ),
                         Text(
-                          "\$68",
+                          "AFN 8600",
                           style: TextStyle(
                               color: TColor.primaryText,
                               fontSize: 13,
@@ -244,7 +243,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Delivery Cost",
+                          "هزینه انتقال",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -252,7 +251,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               fontWeight: FontWeight.w500),
                         ),
                         Text(
-                          "\$2",
+                          "AFN 50",
                           style: TextStyle(
                               color: TColor.primaryText,
                               fontSize: 13,
@@ -267,7 +266,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Discount",
+                          "تخفیف",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -275,7 +274,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               fontWeight: FontWeight.w500),
                         ),
                         Text(
-                          "-\$4",
+                          "-ندارد",
                           style: TextStyle(
                               color: TColor.primaryText,
                               fontSize: 13,
@@ -297,7 +296,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Total",
+                          "مجموع",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: TColor.primaryText,
@@ -305,7 +304,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                               fontWeight: FontWeight.w500),
                         ),
                         Text(
-                          "\$66",
+                          "8650",
                           style: TextStyle(
                               color: TColor.primaryText,
                               fontSize: 15,
@@ -327,7 +326,7 @@ class _CheckoutViewState extends State<CheckoutView> {
                 padding:
                     const EdgeInsets.symmetric(vertical: 20, horizontal: 25),
                 child: RoundButton(
-                    title: "Send Order",
+                    title: "خرید",
                     onPressed: () {
                       showModalBottomSheet(
                           context: context,
